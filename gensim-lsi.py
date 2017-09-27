@@ -14,13 +14,13 @@ logging.basicConfig(format='%(asctime)s : %(levelname)s : %(message)s', level=lo
 
 
 
-dictionary = corpora.Dictionary.load('E:\\mashutian\\alluser_final\\alluser_final.dict')
-corpus = corpora.MmCorpus('E:\\mashutian\\alluser_final\\alluser_final.mm')
+dictionary = corpora.Dictionary.load('E:\\XX.dict')
+corpus = corpora.MmCorpus('E:\\XX.mm')
 tfidf = models.TfidfModel(corpus)
 corpus_tfidf = tfidf[corpus]
 for i in range(1):   
     s=150
-    result=open(r'E:\\mashutian\\alluser_final\\alluser_final_'+str(s)+'.txt','a')
+    result=open(r'E:\\XX_final_'+str(s)+'.txt','a')
     #LSI model 
     lsi = models.LsiModel(corpus_tfidf, id2word=dictionary, num_topics=s)
     lsi_vec=lsi[corpus_tfidf]   
